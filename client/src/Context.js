@@ -50,6 +50,7 @@ const ContextProvider = ({ children }) => {
       socket.off('me');
       socket.off('callUser');
     };
+    // eslint-disable-next-line
   }, []);
 
   const leaveCall = () => {
@@ -224,6 +225,7 @@ const ContextProvider = ({ children }) => {
       stopScreenShare,
       sendData,
       receivedMessages,
+      getMediaStream, 
     }}
     >
       {children}

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Grid2, Typography, Paper, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import MicIcon from '@mui/icons-material/Mic';
@@ -49,7 +49,12 @@ const VideoPlayer = () => {
     toggleVideo,
     shareScreen,
     screenShare,
+    getMediaStream,
   } = useContext(SocketContext);
+
+  useEffect(() => {
+    getMediaStream();
+  }, [getMediaStream]);
 
   return (
     <GridContainer container>
